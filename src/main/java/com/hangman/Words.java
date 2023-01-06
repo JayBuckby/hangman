@@ -44,4 +44,10 @@ public class Words {
         words.add("yesterday");
         words.add("zookeepers");
     }
+
+    public static String generateWord() {
+        return words.get(RANDOM.nextInt(words.size()));
+
+    }
+
 }
