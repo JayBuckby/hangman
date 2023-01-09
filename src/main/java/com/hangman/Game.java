@@ -9,29 +9,76 @@ import java.util.List;
 
 public class Game {
     private Commands commands = new Commands();
+    private Printer printer = new Printer();
+    public static int lives = 6;
 
 
     public void startGame() {
-        String word = Words.generateWord(); // DOG
-        String hiddenWord = word.replaceAll("[a-z]", "_"); // ___
-        // STORING HIDDEN CHARACTERS -> ___
-        System.out.println(word);
-        System.out.println(hiddenWord);
-        List<Character> playerLetter = new ArrayList<>();
-        System.out.println("Please guess a letter");
-        String userGuess = commands.getUserInput(); // G
-        for (int i = 0; i < word.length() ; i++) {
-            System.out.println(word.charAt(i));
+        List<String> letterGuesses = new ArrayList<>();
+        String word = Words.generateWord();
+        String hiddenWord = word.replaceAll("[a-z]", "_");
 
+//        int lives = 6;
+
+
+        while (lives != 0) {
+            System.out.println(hiddenWord);
+            System.out.println("Guess a letter!");
+            String userGuess = commands.getUserInput();
+            userGuess = userGuess.toLowerCase();
+            if (userGuess.equals("")) {
+                System.out.println("You have guessed an empty character, to give yourself a chance, use a letter!");
+            }
+            if (letterGuesses.contains(userGuess)) {
+                System.out.println("You have already guessed this letter, please guess another!");
+            }
+            letterGuesses.add(userGuess);
+            boolean correctGuess = false;
+            for (int i = 0; i < word.length(); i++) {
+                if (userGuess.equals(String.valueOf(word.charAt(i)))) {
+                    hiddenWord = hiddenWord.substring(0, i) + word.charAt(i) + hiddenWord.substring(i + 1);
+                    correctGuess = true;
+
+
+                } // end of FOR loop
+            }
+            if (correctGuess) {
+                printer.correctLetter();
+                Hangman.hangmanImage();
+                System.out.println("Letters guessed so far " + letterGuesses);
+            } else {
+                printer.incorrectGuess();
+                lives--;
+                Hangman.hangmanImage();
+                System.out.println("You have " + lives + " lives left");
+                System.out.println("Letters guessed so far " + letterGuesses);
+            }
+
+            if (hiddenWord.equals(word)) {
+                System.out.println("The word was: " + word);
+                printer.gameWinner();
+                String playerChoice = commands.getUserInput();
+                if (playerChoice.equals("y")) {
+                    lives = 6;
+                    startGame();
+                }
+            }
+        } // END OF WHILE LOOP
+
+
+        if (lives == 0) {
+            System.out.println("The word was: " + word);
+            printer.gameOver();
+            String playerChoice = commands.getUserInput();
+            if (playerChoice.equals("y")) {
+                lives = 6;
+                startGame();
+            }
         }
-
-        System.out.println(userGuess);
-        // AS YOU LOOP CHECK EACH CHARACTER USING THE INDEX
-        // 0 1 2
-        // INDEX 2 GUESS IS CORRECT -> UPDATE HIDDEN CHARACTER AT INDEX 2
-        // LOOP THROUGH EACH CHARACTER IN WORD
-        // IF GUESS EQUALS WORD CHARACTER -> UPDATE HIDDEN WORD
     }
 
 
 }
+
+
+

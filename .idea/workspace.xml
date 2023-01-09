@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="225194d2-2f93-4599-9d85-00f5572ff33c" name="Changes" comment="Created files, added guess words.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="225194d2-2f93-4599-9d85-00f5572ff33c" name="Changes" comment="Creating game method and generate word method">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hangman/Hangman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hangman/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hangman/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hangman/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hangman/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hangman/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hangman/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hangman/Words.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hangman/user/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hangman/user/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hangman/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hangman/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,11 +84,34 @@
       <option name="project" value="LOCAL" />
       <updated>1673012741593</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creating game method and generate word method">
+      <created>1673024403558</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673024403559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created files, added guess words." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created files, added guess words." />
+    <MESSAGE value="Creating game method and generate word method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating game method and generate word method" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hangman/Main.java</url>
+          <line>3</line>
+          <properties class="com.hangman.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
